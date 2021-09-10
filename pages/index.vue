@@ -1,18 +1,58 @@
 <template>
   <div id="app">
-    <section class="vh-100">
-      <div class="container text-center">
-        <h2 class="display-2">Sterling Nova Lynn Raspe</h2>
-        <h3 class="">2020/09/08&mdash;2021/05/11</h3>
-        <p class="lead mw-50 pb-10">
-          Lorem ipsum dolor sit amet consectetur adipisicing, elit. Rem earum, veritatis iure? Laboriosam veniam deleniti unde debitis vero voluptatibus culpa recusandae, consequatur nemo hic tempora, dicta deserunt voluptate quaerat laborum.`
-        </p>
+
+    <header >
+      <a href="#" class="d-inline-block" id="music" @click.prevent="updateMusicStatus()"
+        :class="{ 'muted': music.stopped }"
+      >
+        <svg
+          style=""
+          class=""
+          xmlns="http://www.w3.org/2000/svg" version="1.0" width="500" height="500" viewBox="0 0 75 75"
+        >
+          <path d="M39.389,13.769 L22.235,28.606 L6,28.606 L6,47.699 L21.989,47.699 L39.389,62.75 L39.389,13.769z" style="stroke:#111;stroke-width:5;stroke-linejoin:round;fill:#111;" class="speaker" />
+          <path d="M48,27.6a19.5,19.5 0 0 1 0,21.4M55.1,20.5a30,30 0 0 1 0,35.6M61.6,14a38.8,38.8 0 0 1 0,48.6" style="fill:none;stroke:#111;stroke-width:5;stroke-linecap:round" class="sound-waves" />
+        </svg>
+      </a>
+    </header>
+
+    <section class="vh-100" :id="name" :class="name">
+      <div class="container-fluid text-center">
+        <div class="row">
+          <div class="col-lg-6 about">
+            <h2 :class="`${name}__name`">Sterling Nova Lynn Raspe</h2>
+            <h3 :class="`${name}__life-dates`">
+              8th September 2020<span class="divider"></span>11th May 2021
+              <small class="d-block days">
+                two hundred &amp; forty-five precious days
+              </small>
+            </h3>
+          </div>
+          <div class="col-lg-6" :class="`${name}__obituary`">
+            <div :class="`${name}__obituary__inner`">
+              <p>"<strong class="text-bigger">Sterling</strong>" comes from the word <em>"steorra"</em>, meaning <strong>star</strong>. The word <em>"nova"</em> means <strong>new</strong>. Sterling Nova. A little star made new and whole in heaven. A <em>nova</em> is when a star's gas builds up and triggers an explosion making it shine up to a <strong>million</strong> times <strong>brighter</strong> than normal.</p>
+            </div>
+          </div>
+        </div>
       </div>
       <img class="pigtails" :src="`i/pigtails.png`" alt="asd">
     </section>
 
+    <section class="parallax vh-100 beads-of-courage" data-type="background" data-speed="10" >
+      <div class="container d-flex h-100">
+        <div class="row justify-content-center align-self-center">
+          <blockquote class="blockquote" >
+            <p class="mb-0">Every time a bead is given, courage is honored, suffering is alleviated, resilience is strengthened, and the experience of <strong>human caring</strong> is affirmed. Every Beads of Courage Program integrates the use of beads, the earliest art form known to humans, as visible, tangible symbols of human experiences that <strong>need</strong> and <strong>deserve</strong> to be <strong>expressed</strong>.</p>
+            <footer class="blockquote-footer">
+              <a href="https://beadsofcourage.org" target="_blank">https://beadsofcourage.org</a>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
     <section id="fullsize" class="fullsize">
-      <div v-for="(n,i) in 10" :key="i">
+      <div v-for="(n, i) in 10" :key="i">
         <img class="fullsize__image" :src="`i/test-${i}.png`" alt="asd">
       </div>
     </section>
@@ -32,14 +72,14 @@
               {{ b.date }}
             </h4>
             <div class="timeline__notes lead">
-              <p>{{ b.text }}</p>
+              <p v-html="nl2br(b.text)"></p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="vh-100">
+    <section class="vh-100 fullpage-section">
       <div class="container">
         <h2 class="display-4">
           Lorem ipsum dolor sit!
@@ -57,14 +97,28 @@
 </template>
 
 <script>
+import $ from 'jquery';
 import moment from 'moment'
 
 export default {
   data () {
     return {
+      name: 'sterling',
+
+      music: {
+        stopped: false,
+        playing: 0,
+        playlist: [
+          new Audio('/a/pretty-pretty-blue-eyes.mp3'),
+          new Audio('/a/speak-softly-sterling.mp3'),
+          new Audio('/a/you-made-us-so-very-happy.mp3')
+        ],
+      },
+
       dates: [],
+
       beads: [
-        { id: '1a.png', date: '2020/09/08', text: 'Born, mcononium aspiration', image: '' },
+        { id: '1a.png', date: '2020/09/08', text: 'Born\r\nmcononium aspiration', image: '' },
         { id: '1b.png', date: '2020/09/08', text: 'cath procedure', image: '' },
         { id: '1c.png', date: '2020/09/09', text: 'mom\'s first hold', image: '' },
         { id: '2a.png', date: '2020/09/10', text: 'dad\'s first hold', image: '' },
@@ -204,21 +258,41 @@ export default {
     };
   },
   mounted () {
-    // var rulezV = new Rulez({
-    //   element: document.getElementById('svgV'),
-    //   layout: 'vertical',
-    //   units: 'px',
-    //   type: 'line',
-    //   strokeWidth: 1,
-    //   showUnits: true,
-    // });
-    // rulezV.render();
-    // var scroll = document.getElementById('app');
-    // scroll.addEventListener('scroll', function () {
-    //     rulezV.scrollTo(scroll.scrollTop);
-    // });
+    this.updateMusicStatus();
+
+    this.setupParallax();
   },
   methods: {
+    updateMusicStatus() {
+      const self = this;
+
+      try {
+        self.music.stopped = ! self.music.stopped;
+
+        const audio = self.music.playlist[self.music.playing];
+
+        audio.onended = function() {
+          self.music.playing = ( self.music.playing === self.music.playlist.length -1 ? 0 : self.music.playing + 1);
+          const next = self.music.playlist[self.music.playing];
+          next.play();
+        };
+
+        if (self.music.stopped === true) {
+          audio.pause();
+          audio.currentTime = 0;
+          self.music.playing = ( self.music.playing === self.music.length ? 0 : self.music.playing + 1);
+          return;
+        }
+
+        audio.play();
+      } catch (error) {
+        self.music.stopped = ! self.music.stopped;
+        self.music.playing = 0;
+      }
+    },
+    nl2br (text) {
+      return text.replace('\r\n', '<br/>')
+    },
     getDaySinceBirth (date) {
       return `Day ${this.daysSinceBirth(date)}`;
     },
@@ -230,6 +304,21 @@ export default {
           .startOf('day')
           .diff(moment(to, 'YYYY-MM-DD').startOf('day'), 'days')
       ) + 1;
+    },
+
+    setupParallax () {
+      $(document).ready(() => {
+        var $window = $(window);
+        $('[data-type="background"]').each(() => {
+          var $bg = $(this);
+
+          $(window).scroll(() => {
+            var yPos = -($window.scrollTop() / $bg.data('speed'));
+            var coords = '50% '+ yPos + 'px';
+            $bg.css({ backgroundPosition: coords });
+          });
+        });
+      });
     }
   }
 }
