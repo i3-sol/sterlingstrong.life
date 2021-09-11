@@ -251,8 +251,12 @@ html, body {
 #scroll-down,
 #music {
     svg {
-        height: 75px;
+        height: 25px;
         width: 100%;
+
+        @include media-breakpoint-up(md) {
+            height: 75px;
+        }
 
         @include media-breakpoint-up(lg) {
             height: 150px;
@@ -389,7 +393,6 @@ html, body {
     .pigtails {
         position: absolute;
         width: 300px;
-        display: flex;
 
         bottom: 0px;
         z-index: 0;
@@ -400,6 +403,7 @@ html, body {
         }
 
         img {
+            object-fit: contain;
             mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
             max-width: 100%;
             justify-content: center;
@@ -461,8 +465,10 @@ html, body {
     // background-color: rgba(0, 123, 255, 0.4);
     // background-blend-mode: screen;
     background-image: url('/i/sterlings-life.jpg');
-    background-attachment: fixed;
-    // asd
+
+    @include media-breakpoint-up(lg) {
+        background-attachment: fixed;
+    }
 
     &--masked {
         background-attachment: initial;
@@ -471,7 +477,7 @@ html, body {
     }
 
     #app.css-mask-support & {
-        background-attachment: fixed;
+
         &--masked {
             // mask:  url(/i/pigtails.svg) center/contain no-repeat, linear-gradient(#fff 0 0);
             // mask-composite:destination-out;

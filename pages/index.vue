@@ -240,7 +240,7 @@ export default {
 
       counts: [
         { 'text': 'Admission or Transfer to Intensive Care Unit', 'type': 'Square Heart', count: [3, 1, 0] },
-        { 'text': 'Central Line | Midline | Pheresis Catherter Placement & Removal', 'type': 'Orage', count: [39, 105, 35] },
+        { 'text': 'Central Line | Midline | Pheresis Catherter Placement & Removal', 'type': 'Orange', count: [39, 105, 35] },
         { 'text': 'Clinic Visit', 'type': 'Blue', count: [10, 0, 0], },
         { 'text': 'Dialysis | TPN | NPO', 'type': 'Dark Green', count: [45, 111, 35], },
         { 'text': 'Dressing Change & Skin Care', 'type': 'Gray', count: [10, 19, 9], },
