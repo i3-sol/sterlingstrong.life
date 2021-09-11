@@ -1,7 +1,7 @@
 const type = 'website'
 const url = 'https://sterlingstrong.life'
-const title = 'Sterling Raspe | sterlingstrong.life'
-const description = `Sterling lived for 245 days and spent 207 of those days an ICU. She had 9 surgeries, including 4 major heart surgeries. She was a very special little girl. 1 of 4-11 people in the world. That's how special.`
+const title = 'Sterling Raspe | 2020/09/08\u20142021/05/11 | sterlingstrong.life'
+const description = `Sterling Raspe lived for 245 days and spent 207 of those days an ICU. She had 9 surgeries, including 4 major heart surgeries. She was a very special little girl. 1 of 4-11 people in the world. That's how special. Follow her journey through her Beads of Courage.`
 const mainImage = '/i/sterling-strong-beads-of-courage.png'
 
 export default (meta) => {

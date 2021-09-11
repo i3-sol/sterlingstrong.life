@@ -10,7 +10,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Sterling Raspe - 2020/09/08 &mdash; 2021/05/11',
+    title: 'Sterling Raspe | 2020/09/08\u20142021/05/11 | sterlingstrong.life',
     htmlAttrs: {
       lang: 'en'
     },

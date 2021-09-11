@@ -86,7 +86,13 @@ header {
 }
 
 .text-bigger {
-    font-size: 120%;
+    font-size: 125% !important;
+}
+.text-bigger-x2 {
+    font-size: 150% !important;
+}
+.text-bigger-x3 {
+    font-size: 175% !important;
 }
 
 .body-text {
@@ -412,7 +418,7 @@ header {
 }
 
 .parallax {
-    background-position: 0 0;
+    background-position: 50% 0;
     background-repeat: no-repeat;
     background-size: cover;
     // background-color: rgba(0, 123, 255, 0.4);
@@ -423,7 +429,7 @@ header {
 
     &--masked {
         background-attachment: initial;
-        background-image: url('/i/image-004.png');
+        background-image: url('/i/strerling-strong-straight.png');
         background-size: 100%;
     }
 
@@ -435,7 +441,7 @@ header {
             // mask-composite:exclude;
 
             background-image: url('/i/sterlings-life.jpg');
-            mask-image: url(/i/image-004.png);
+            mask-image: url(/i/strerling-strong-straight.png);
             mask-size: 100vmin;
             mask-repeat: no-repeat;
             mask-position: center;
@@ -577,3 +583,13 @@ header {
     }
 }
 
+
+
+.follow-my-journey {
+    p {
+        font-size: 1rem;
+        @include media-breakpoint-up(sm) {
+            font-size: 1.25rem;
+        }
+    }
+}
