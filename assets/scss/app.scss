@@ -69,7 +69,7 @@ html, body {
     width: 100%;
 }
 
-header {
+#header {
   position: fixed;
   top: 0;
   right: 30px;
@@ -85,6 +85,11 @@ header {
     width: 100vw;
 }
 
+.double-dash {
+    letter-spacing: -3px;
+    font-weight: 300;
+}
+
 .text-bigger {
     font-size: 125% !important;
 }
@@ -94,7 +99,15 @@ header {
 .text-bigger-x3 {
     font-size: 175% !important;
 }
-
+.text-bigger-x4 {
+    font-size: 200% !important;
+}
+.text-bigger-x5 {
+    font-size: 225% !important;
+}
+.text-bigger-x6 {
+    font-size: 250% !important;
+}
 .body-text {
     font-family: $font-family-sans-serif;
 }
@@ -173,6 +186,11 @@ header {
     min-height: 130029px; // size of full-size pic/div
 }
 
+.day--253,
+.day--5732 {
+    margin-top: 20rem !important;
+}
+
 .timeline__item {
     display: flex;
     margin: 0rem auto;
@@ -218,10 +236,20 @@ header {
 
 }
 
-#scroll,
+
+#scroll-up {
+    transform: rotate(180deg);
+    .topped {
+        .arrow {
+            fill: $brand-1 !important;
+            opacity: 0.333;
+        }
+    }
+}
+
+#scroll-up,
+#scroll-down,
 #music {
-    margin-top: 1rem;
-    margin-right: 1rem;
     svg {
         height: 75px;
         width: 100%;
@@ -259,11 +287,10 @@ header {
 
 
 .sterling {
-
     @extend .fullpage-section;
+    z-index: 100;
 
     > .container-fluid {
-        z-index: 20;
         height: auto;
         @include media-breakpoint-up(lg) {
             height: 100vh;
@@ -277,6 +304,7 @@ header {
             display: flex;
             flex-direction: column;
             align-self: center;
+            z-index: 1000;
         }
     }
 
@@ -327,7 +355,8 @@ header {
     &__obituary {
         font-size: 1.25rem;
         font-weight: 300;
-
+        position: relative;
+        z-index: 200;
         @include media-breakpoint-up(lg) {
             display: flex;
             align-items: flex-end;
@@ -336,11 +365,11 @@ header {
         }
 
         &__inner {
-            z-index: 50;
             padding-top: 3rem;
+            // position: relative;
+            // z-index: -1;
             position: relative;
-            z-index: -1;
-
+            z-index: 200;
             em {
                 // font-family: monospace;
             }
@@ -361,14 +390,22 @@ header {
         position: absolute;
         width: 300px;
         display: flex;
-        justify-content: center;
-        bottom: 0px;
-        z-index: 3;
-        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
 
+        bottom: 0px;
+        z-index: 0;
+        left: 75px;
 
         @include media-breakpoint-up(lg) {
-            left: 12.5%;
+            left: 250px;
+        }
+
+        img {
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+            max-width: 100%;
+            justify-content: center;
+            @include media-breakpoint-up(lg) {
+                left: 12.5%;
+            }
         }
     }
 }
@@ -419,13 +456,13 @@ header {
 
 .parallax {
     background-position: 50% 0;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     // background-color: rgba(0, 123, 255, 0.4);
     // background-blend-mode: screen;
     background-image: url('/i/sterlings-life.jpg');
-
     background-attachment: fixed;
+    // asd
 
     &--masked {
         background-attachment: initial;
@@ -500,7 +537,7 @@ header {
 
 
 #clouds {
-    z-index: -1;
+    z-index: -2;
     position: relative;
     max-height: 50px;
     @include media-breakpoint-up(lg) {
@@ -514,7 +551,7 @@ header {
   background: #fff;
   border-radius: 200px;
   position: relative;
-  z-index: -1;
+  z-index: -2;
 
   &:before {
     content: '';
@@ -537,8 +574,7 @@ header {
     width: 100px;
     height: 80px;
     position: absolute;
-    top: -15px;
-    left: 10px;
+
     border-radius: 100px;
     transform: rotate(30deg);
     width: 120px;
@@ -548,7 +584,11 @@ header {
     right: 15px;
   }
     &--a {
-      animation: moveclouds 15s linear infinite;
+        animation: moveclouds 15s linear infinite;
+        top: -100px;
+        @include media-breakpoint-up(lg) {
+            top: 0;
+        }
     }
 
     &--b {

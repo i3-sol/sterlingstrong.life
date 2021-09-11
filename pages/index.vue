@@ -1,8 +1,8 @@
 <template>
   <div id="app" :class="{ 'css-mask-support': csssupport }">
 
-    <header >
-      <a href="#" class="d-inline-block" id="music" @click.prevent="updateMusicStatus()"
+    <section id="header" class="d-flex">
+      <a href="#" class="" id="music" @click.prevent="updateMusicStatus()"
         :class="{ 'muted': music.stopped }"
       >
         <svg
@@ -15,16 +15,24 @@
         </svg>
       </a>
 
-      <a href="#" v-scroll-to="{ el: '#appeal', container: '#app', duration: 500000, cancelable: true }" class="d-inline-block ml-1" id="scroll">
+      <a href="#" v-scroll-to="{ el: `#${name}`, container: '#app', duration: 1000, cancelable: true }" class="d-inline-block ml-1" id="scroll-up">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+            <g class="uparrow topped">
+                <path class="arrow" d="M1 4h10L6 9 1 4"/>
+            </g>
+        </svg>
+      </a>
+
+      <a href="#" v-scroll-to="{ el: '#appeal', container: '#app', duration: 500000, cancelable: true }" class="d-inline-block ml-1" id="scroll-down">
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
             <g class="downarrow">
                 <path class="arrow" d="M1 4h10L6 9 1 4"/>
             </g>
         </svg>
       </a>
-    </header>
+    </section>
 
-    <section class="min-vh-100 fullpage-section--top-fade" :id="name" :class="name">
+    <header class="min-vh-100 fullpage-section--top-fade" :id="name" :class="name">
       <div class="container-fluid text-center">
         <div class="row">
           <div class="col-lg-6 about">
@@ -50,8 +58,11 @@
           </div>
         </div>
       </div>
-      <img class="pigtails" :src="`i/pigtails.png`" alt="asd">
-    </section>
+
+      <div class="pigtails">
+        <img :src="`i/pigtails.png`" alt="Sterling's signature pigtails">
+      </div>
+    </header>
 
     <div class="w-100 w-xl-50 mx-auto my-2 my-lg-10">
       <div class="row justify-content-center align-self-center">
@@ -63,7 +74,7 @@
               <div class="row justify-content-center align-self-center">
                 <div class="col-12 px-5 pl-xl-5 font-weight-light">
                   <p class="lead">Sterling Raspe was an incredible little girl who was the epitome of strength.</p>
-                  <p class=""><strong class="font-weight-bold">Sterling</strong> lived for 245 days and spent 207 of those days in the Pediatric Cardiac Unit in Oak Lawn, IL, USA. She had 9 surgeries, including 4 major heart surgeries. She <strong class="font-weight-bold">was</strong> a very special little girl. Depending on who you ask, anywhere between 700 million to two billion - or 1 of <strong class="font-weight-bold">between 4-11 people in the world</strong>.</p>
+                  <p class=""><strong class="font-weight-bold">Sterling</strong> lived for 245 days and spent 207 of those days in the Pediatric Cardiac Unit in Oak Lawn, IL, USA. She had 9 surgeries, including 4 major heart surgeries. She <strong class="font-weight-bold">was</strong> a very special little girl. Depending on who you ask, <strong class="font-weight-bold">anywhere</strong> between 700 million to two billion - or 1 of <strong class="font-weight-bold">between 4-11 people in the world</strong>.</p>
                   <p>She was <em>very</em> special.</p>
                   <p class="">She was diagnosed with:</p>
                   <ul class="small font-weight-light">
@@ -84,9 +95,9 @@
             </div>
         </div>
         <div class="col-12 mt-5 mb-10 follow-my-journey">
-          <p class="text-center mt-10 mb-5 mb-md-7">&mdash;&mdash; Follow Sterling's journey through her <strong class="font-weight-bold">Beads of Courage</strong> &mdash;&mdash;</p>
-          <p class="text-center mb-5 mb-md-7">&mdash;&mdash; <strong class="font-weight-bold">One</strong> bead for every scan, test, therapy, surgery, discharge, <em>etc.</em>&hellip; &mdash;&mdash;</p>
-          <p class="text-center mb-10">&mdash;&mdash; Streling received a total of <strong class="font-weight-bold brand-3 text-bigger-x3 align-middle">{{ totals.beads }}</strong> beads &mdash;&mdash;</p>
+          <p class="text-center mt-10 mb-5 mb-md-7 "><span class="d-block  double-dash ">&mdash;&mdash;</span> Here is Sterling's journey, expressed through her <strong class="font-weight-bold">Beads of Courage</strong><span class="d-block double-dash">&mdash;&mdash;</span></p>
+          <p class="text-center mb-5 mb-md-7"><span class="d-block double-dash">&mdash;&mdash;</span> <strong class="font-weight-bold">One</strong> bead for <strong class="font-weight-bold">every</strong> scan, test, therapy, surgery, discharge, <em>etc.</em>&hellip; <span class="d-block double-dash">&mdash;&mdash;</span></p>
+          <p class="font-weight-bold text-center mb-10 "><span class="d-block double-dash">&mdash;&mdash;</span><span class="text-bigger-x3"> Sterling <span class="d-block d-lg-inline">received</span> <strong class="font-weight-bold brand-3 text-bigger-x5 align-middle p-2 d-block my-n4">{{ totals.beads }}</strong> <strong class="font-weight-bold">beads</strong></span> <span class="d-block double-dash">&mdash;&mdash;</span></p>
         </div>
       </div>
     </div>
@@ -107,16 +118,16 @@
 
     <section id="fullsize" class="fullsize">
       <div v-for="(n, i) in 10" :key="i">
-        <img class="fullsize__image" :src="`i/bead-long-section-${i}.png`" alt="asd">
+        <img class="fullsize__image" :src="`i/bead-long-section-${i}.png`" alt="these images aren't important!">
       </div>
     </section>
 
     <section id="timeline" class="timeline container">
       <div v-for="(b, n) in beads" :key="b.id" :id="`section--${b.id}`"
-        class="timeline__item"
+        class="timeline__item" :class="`day--${daysSinceBirth(b.date)}`"
       >
-        <div class="timeline__image-holder">
-          <img class="timeline__image" :src="`i/bead-sections/${b.id}`" alt="">
+        <div class="timeline__image-holder" v-if="b.id.indexOf('.') > -1">
+          <img class="timeline__image" :src="`i/bead-sections/${b.id}`" :alt="`this is section ${b.id} of the beads`">
         </div>
         <div class="timeline__description-wrapper" >
           <div class="timeline__description" v-if="b.text || b.image">
@@ -126,7 +137,7 @@
             <h4 class="timeline__date text-muted" v-if="b.day === true">
               {{ b.date }}
             </h4>
-            <div class="timeline__notes lead">
+            <div class="timeline__notes lead" v-if="b.text">
               <p v-html="nl2br(b.text)"></p>
             </div>
           </div>
@@ -157,9 +168,11 @@
               </tr>
             </tbody>
             <tfoot class="">
-              <td colspan="3" class="text-right font-weight-bold pr-4 text-bigger-x2">
-                total beads: {{ totals.beads }}
-              </td>
+              <tr>
+                <td colspan="3" class="text-right font-weight-bold pr-4 text-bigger-x2">
+                  total beads: {{ totals.beads }}
+                </td>
+              </tr>
             </tfoot>
           </table>
         </div>
@@ -176,17 +189,17 @@
           and even after I had <br/>gone through all of that, my various</br/>diagnosises and disabilities,<br/> as of today, <span class="d-block brand-7">{{ now }},</span> I still haven't qualified for<br/>Medicaid<br/><br/>Do you think I deserve to qualify?<br /><br/>My parents think I do.
         </h2>
         <ul class="mw-50">
-          <li class="position-relative">read my daddy's Medicaid <a href="#" class="stretched-link" target="_blank">Appeal Letter</a></li>
+          <li class="position-relative">read my daddy's Medicaid <a href="https://kingsley.sh/posts/2021/sterlings-medicaid-hearing-response" class="stretched-link" target="_blank">Appeal Letter</a></li>
           <li class="or">&mdash;&mdash; or visit &mdash;&mdash;</li>
-          <li class="position-relative">
-            my non-profit <br/><a href="https://sterlingstrong.foundation" class="stretched-link">Sterling Strong Foundation</a><br/>Inc.
+          <li class="position-relative" title="an incorporated 501(c)(3) non-profit pending IRS approval">
+            my non-profit <br/><a href="https://sterlingstrong.foundation" class="stretched-link">Sterling Strong Foundation</a><br/><abbr>Inc.</abbr>
             <a href="https://sterlingstrong.foundation" class="d-block mt-7" target="_blank">
-              <img src="/i/sterling-strong-xl.png" class="mw-100 mx-auto" style="width:350px">
+              <img src="/i/sterling-strong-xl.png" class="mw-100 mx-auto" style="width:350px" alt="Sterling Strong Foundation, Inc.">
             </a>
           <li>
           <li class="position-relative">
             <span class="mt-7 d-block">
-              My mommy and daddy <br/>are going to support, advocate,<br/>&amp; fight for children like me.
+              My daddy and mommy <br/>are going to support, advocate,<br/>&amp; fight for children like me.
             </span>
           </li>
           <li class="position-relative">
@@ -196,7 +209,7 @@
           </li>
           <li class="position-relative">
             <span class="mt-7 d-block">
-              My mommy and daddy think <br/>no child should <strong class="font-weight-bold text-bigger d-block">unnecessarily</strong> suffer&hellip;
+              My daddy and mommy think <br/>no child should <strong class="font-weight-bold text-bigger d-block">unnecessarily</strong> suffer&hellip;
               <br/><br/><br/><br/>
               <span class="display-1 d-block mt-5">Do <em class="font-weight-bold">you?</em></span>
             </span>
@@ -267,7 +280,7 @@ export default {
         { id: '2a.png', day: true, date: '2020/09/10', text: 'My daddy held me for the first time', image: '' },
         { id: '2c.png', day: true, date: '2020/09/11', text: 'I needed my first non-OR blood transfusion', image: '' },
         { id: '3a.png', day: true, date: '2020/09/13', text: '', image: '' },
-        { id: '3b.png', day: false, date: '2020/09/13', text: 'Doctors thought I had an infection. \r\n\r\n I had 2 failed spinal taps\r\n\r\nI didn\'t have an infection', image: '' },
+        { id: '3b.png', day: false, date: '2020/09/13', text: 'Doctors thought I had an infection \r\n\r\n I had 2 failed spinal taps\r\n\r\nI didn\'t have an infection', image: '' },
         { id: '3c.png', day: true, date: '2020/09/14', text: 'I had my first major open-heart surgery - the Norwood', image: '' },
         { id: '3d.png', day: true, date: '2020/09/16', text: 'Doctors left my sternum open after surgery to allow my chest to swell\r\n\r\n I had it closed today', image: '' },
         { id: '3e.png', day: true, date: '2020/09/20', text: 'The chest tube doctors placed to drain fluid was removed today', image: '' },
@@ -396,14 +409,18 @@ export default {
         { id: '50b.png', day: true, date: '2021/05/03', text: 'I deteriorated and needed to be intubated\r\n\r\nI had another catheterisation procedure to find out why I got sick\r\n\r\n...again...', image: '' },
         { id: '51a.png', day: true, date: '2021/05/06', text: 'Doctors tried to remove my breathing tube\r\n\r\nbut I wasn\'t strong enough without it', image: '' },
         { id: '51b.png', day: true, date: '2021/05/07', text: 'My lungs were very sick from the chlothorax and extra volume\r\n\r\nand I an started extreme course of antibiotics', image: '' },
-        { id: '51c.png', day: true, date: '2021/05/10', text: 'I had a very difficult night\r\n\r\nMy lungs were really, really sick\r\n\r\nI waited for my parents to arrive in the morning\r\n\r\n I decided I was ready\r\n\r\nI went into cardiac arrest and I was resuscitated with CPR and epinetherin\r\n\r\nCPR broke some of my ribs\r\n\r\nI was kept alive by the ventilator until the following day\r\n\r\nMy parents knew I was not coming back\r\n\r\nThey made the brave decision to turn off my ventilator\r\n\r\nI took my last breath at 8:22am, peacefully, in the arms of my mommy and daddy, surrounded by my family\r\n\r\nI am no longer in pain', image: '' }
+        { id: '51c.png', day: true, date: '2021/05/10', text: 'I had a very difficult night\r\n\r\nMy lungs were really, really sick\r\n\r\nI waited for my parents to arrive in the morning\r\n\r\n I decided I was ready\r\n\r\nI went into cardiac arrest and I was resuscitated with CPR and epinetherin\r\n\r\nCPR broke some of my ribs\r\n\r\nI was kept alive by the ventilator until the following day\r\n\r\nMy parents knew I was not coming back\r\n\r\nThey made the brave decision to turn off my ventilator\r\n\r\nI took my last breath at 9:22am, peacefully, in the arms of my mommy and daddy, surrounded by my family\r\n\r\nI am now forever at peace', image: '' },
+        { id: 'custom', day: true, date: '2021/05/18', text: 'Sterling was cremated, and some of her ashes were placed in the soil we used to plant a redbud tree.', image: '' },
+        { id: 'custom', day: true, date: '2036/05/18', text: 'We watered her & we still got to watch her grow into something else equally as beautiful.', image: '' }
       ],
     };
   },
   mounted () {
     this.updateMusicStatus();
 
-    this.setupParallax();
+    this.$nextTick(() => {
+        this.setupParallax();
+    });
 
     if (process.browser) {
       this.music.stopped = true;
@@ -463,9 +480,8 @@ export default {
         self.music.playing = 0;
       }
     },
-
     nl2br (text) {
-      return text.replaceAll('\r\n', '<br/>')
+      return text.replace(/\r\n/g, '<br/>');
     },
 
     getDaySinceBirthText (date) {
@@ -485,10 +501,16 @@ export default {
     setupParallax () {
       $(document).ready(() => {
         var $window = $(window);
+
+        $('#app').on('scroll', ((e) => {
+          $('.topped').removeClass('topped');
+        }));
+
         $('[data-type="background"]').each(() => {
           var $bg = $(this);
 
           $(window).scroll(() => {
+
             var yPos = -($window.scrollTop() / $bg.data('speed'));
             var coords = '50% '+ yPos + 'px';
             $bg.css({ backgroundPosition: coords });
