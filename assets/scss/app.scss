@@ -471,9 +471,11 @@ html, body {
     }
 
     &--masked {
-        background-attachment: fixed;
         background-image: url('/i/strerling-strong-straight.png');
         background-size: 100%;
+        @include media-breakpoint-up(lg) {
+            background-attachment: fixed;
+        }
     }
 
     #app.css-mask-support & {
