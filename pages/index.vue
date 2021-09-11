@@ -429,7 +429,7 @@ export default {
       const urlSearchParams = new URLSearchParams(window.location.search);
       const { noappeal } = Object.fromEntries(urlSearchParams.entries());
 
-      if (typeof noappeal !== 'undefined') {
+      if (typeof noappeal === 'undefined') {
         this.appeal = false;
       }
 
