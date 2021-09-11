@@ -220,11 +220,7 @@ export default {
       music: {
         stopped: false,
         playing: 0,
-        playlist: [
-          new Audio('/a/pretty-pretty-blue-eyes.mp3'),
-          new Audio('/a/speak-softly-sterling.mp3'),
-          new Audio('/a/you-made-us-so-very-happy.mp3')
-        ],
+        playlist: [],
       },
 
       dates: [],
@@ -408,15 +404,27 @@ export default {
     this.updateMusicStatus();
 
     this.setupParallax();
+
+    if (process.browser) {
+      this.music.stopped = true;
+      this.music.playlist = [
+        new Audio('/a/pretty-pretty-blue-eyes.mp3'),
+        new Audio('/a/speak-softly-sterling.mp3'),
+        new Audio('/a/you-made-us-so-very-happy.mp3')
+      ];
+    }
   },
   computed: {
     now() {
       return moment().format('MMMM Do YYYY');
     },
     csssupport() {
-      return {
-        'cssmask': document.body.style[ '-webkit-mask-repeat' ] !== undefined,
+      if (process.browser) {
+        return {
+          'cssmask': document.body.style[ '-webkit-mask-repeat' ] !== undefined,
+        }
       }
+      return { 'cssmask': false };
     },
     totals() {
       let beads = 0;
