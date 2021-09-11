@@ -43,14 +43,14 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    // '@nuxtjs/eslint-module',
-    'vue-plausible',
+    '@nuxtjs/eslint-module',
     'moment',
     'vue-scrollto/nuxt'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    'vue-plausible',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

@@ -471,7 +471,7 @@ html, body {
     }
 
     &--masked {
-        background-attachment: initial;
+        background-attachment: fixed;
         background-image: url('/i/strerling-strong-straight.png');
         background-size: 100%;
     }
