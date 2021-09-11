@@ -183,31 +183,32 @@
       <section class="parallax min-vh-100 w-100 my-n5 py-5" data-type="background" data-speed="10" style="mask-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(215,131,127,1) 10%, rgba(215,131,127,1) 90%, rgba(255,255,255,0) 100%);">&nbsp;</section>
     </div>
 
-    <section class="min-min-vh-100 fullpage-section appeal" id="appeal">
-      <div class="container mt-10">
-        <h2 class="body-text font-weight-bold text-center" style="line-height: 1">
+    <section class="min-min-vh-100 fullpage-section appeal" id="appeal" >
+      <div class="container mt-10" :class="{ 'mt-5': appeal === true }">
+        <h2 class="body-text font-weight-bold text-center" style="line-height: 1" v-if="appeal === true">
           and even after I had <br/>gone through all of that, my various</br/>diagnosises and disabilities,<br/> as of today, <span class="d-block brand-7">{{ now }},</span> I still haven't qualified for<br/>Medicaid<br/><br/>Do you think I deserve to qualify?<br /><br/>My parents think I do.
         </h2>
+
         <ul class="mw-50">
-          <li class="position-relative">read my daddy's Medicaid <a href="https://kingsley.sh/posts/2021/sterlings-medicaid-hearing-response" class="stretched-link" target="_blank">Appeal Letter</a></li>
-          <li class="or">&mdash;&mdash; or visit &mdash;&mdash;</li>
+          <li class="position-relative" v-if="appeal === true">read my daddy's Medicaid <a href="https://kingsley.sh/posts/2021/sterlings-medicaid-hearing-response" class="stretched-link" target="_blank">Appeal Letter</a></li>
+          <li class="or">&mdash;&mdash; <span v-if="appeal === true">or</span> visit &mdash;&mdash;</li>
           <li class="position-relative" title="an incorporated 501(c)(3) non-profit pending IRS approval">
             my non-profit <br/><a href="https://sterlingstrong.foundation" class="stretched-link">Sterling Strong Foundation</a><br/><abbr>Inc.</abbr>
             <a href="https://sterlingstrong.foundation" class="d-block mt-7" target="_blank">
               <img src="/i/sterling-strong-xl.png" class="mw-100 mx-auto" style="width:350px" alt="Sterling Strong Foundation, Inc.">
             </a>
           <li>
-          <li class="position-relative">
+          <li class="position-relative" v-if="appeal === true">
             <span class="mt-7 d-block">
               My daddy and mommy <br/>are going to support, advocate,<br/>&amp; fight for children like me.
             </span>
           </li>
-          <li class="position-relative">
+          <li class="position-relative" v-if="appeal === true">
             <span class="mt-7 d-block">
               <a href="https://en.wikipedia.org/wiki/Texas_Heartbeat_Act" target="_blank">Unlike these people.</a>
             </span>
           </li>
-          <li class="position-relative">
+          <li class="position-relative" v-if="appeal === true">
             <span class="mt-7 d-block">
               My daddy and mommy think <br/>no child should <strong class="font-weight-bold text-bigger d-block">unnecessarily</strong> suffer&hellip;
               <br/><br/><br/><br/>
@@ -229,6 +230,8 @@ export default {
   data () {
     return {
       name: 'sterling',
+
+      appeal: true,
 
       music: {
         stopped: false,
@@ -410,8 +413,8 @@ export default {
         { id: '51a.png', day: true, date: '2021/05/06', text: 'Doctors tried to remove my breathing tube\r\n\r\nbut I wasn\'t strong enough without it', image: '' },
         { id: '51b.png', day: true, date: '2021/05/07', text: 'My lungs were very sick from the chlothorax and extra volume\r\n\r\nand I an started extreme course of antibiotics', image: '' },
         { id: '51c.png', day: true, date: '2021/05/10', text: 'I had a very difficult night\r\n\r\nMy lungs were really, really sick\r\n\r\nI waited for my parents to arrive in the morning\r\n\r\n I decided I was ready\r\n\r\nI went into cardiac arrest and I was resuscitated with CPR and epinetherin\r\n\r\nCPR broke some of my ribs\r\n\r\nI was kept alive by the ventilator until the following day\r\n\r\nMy parents knew I was not coming back\r\n\r\nThey made the brave decision to turn off my ventilator\r\n\r\nI took my last breath at 9:22am, peacefully, in the arms of my mommy and daddy, surrounded by my family\r\n\r\nI am now forever at peace', image: '' },
-        { id: 'custom', day: true, date: '2021/05/18', text: 'Sterling was cremated, and some of her ashes were placed in the soil we used to plant a redbud tree.', image: '' },
-        { id: 'custom', day: true, date: '2036/05/18', text: 'We watered her & we still got to watch her grow into something else equally as beautiful.', image: '' }
+        { id: 'customa', day: true, date: '2021/05/18', text: 'Sterling was cremated, and some of her ashes were placed in the soil we used to plant a redbud tree.', image: '' },
+        { id: 'customb', day: true, date: '2036/05/18', text: 'We watered her & we still got to watch her grow into something else equally as beautiful.', image: '' }
       ],
     };
   },
@@ -423,6 +426,13 @@ export default {
     });
 
     if (process.browser) {
+      const urlSearchParams = new URLSearchParams(window.location.search);
+      const { noappeal } = Object.fromEntries(urlSearchParams.entries());
+
+      if (typeof noappeal !== 'undefined') {
+        this.appeal = false;
+      }
+
       this.music.stopped = true;
       this.music.playlist = [
         new Audio('/a/pretty-pretty-blue-eyes.mp3'),
