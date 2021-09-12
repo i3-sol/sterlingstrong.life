@@ -198,7 +198,7 @@
               <img src="/i/sterling-strong-xl.png" class="mw-100 mx-auto" style="width:350px" alt="Sterling Strong Foundation, Inc.">
             </a>
           <li>
-          <li class="position-relative" v-if="appeal === true">
+          <li class="position-relative">
             <span class="mt-7 d-block">
               My daddy and mommy <br/>are going to support, advocate,<br/>&amp; fight for children like me.
             </span>
@@ -231,7 +231,7 @@ export default {
     return {
       name: 'sterling',
 
-      appeal: true,
+      appeal: false,
 
       music: {
         stopped: false,
@@ -427,10 +427,10 @@ export default {
 
     if (process.browser) {
       const urlSearchParams = new URLSearchParams(window.location.search);
-      const { noappeal } = Object.fromEntries(urlSearchParams.entries());
+      const { appeal } = Object.fromEntries(urlSearchParams.entries());
 
-      if (typeof noappeal === 'undefined') {
-        this.appeal = false;
+      if (typeof appeal !== 'undefined') {
+        this.appeal = true;
       }
 
       this.music.stopped = true;
