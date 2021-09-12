@@ -78,7 +78,7 @@
                   <p>She was <em>very</em> special.</p>
                   <p class="">She was diagnosed with:</p>
                   <ul class="small font-weight-light">
-                    <li>hypoplastic left heart syndrome (HLHS)</li>
+                    <li>a rare variant of hypoplastic left heart syndrome (HLHS)</li>
                     <li>kabuki syndrome</li>
                     <li>being severely immunocompromised (IgG deficient)</li>
                     <li>isomerism/heterotaxy</li>
@@ -411,7 +411,7 @@ export default {
         { id: '50a.png', day: true, date: '2021/05/01', text: 'I developed chlothorax\r\n\r\nI had a chest tube placed to drain the extra cyle/fluid around my lungs', image: '' },
         { id: '50b.png', day: true, date: '2021/05/03', text: 'I deteriorated and needed to be intubated\r\n\r\nI had another catheterisation procedure to find out why I got sick\r\n\r\n...again...', image: '' },
         { id: '51a.png', day: true, date: '2021/05/06', text: 'Doctors tried to remove my breathing tube\r\n\r\nbut I wasn\'t strong enough without it', image: '' },
-        { id: '51b.png', day: true, date: '2021/05/07', text: 'My lungs were very sick from the chlothorax and extra volume\r\n\r\nand I an started extreme course of antibiotics', image: '' },
+        { id: '51b.png', day: true, date: '2021/05/07', text: 'My lungs were very sick from the chlothorax and extra volume\r\n\r\nand I started extreme course of antibiotics', image: '' },
         { id: '51c.png', day: true, date: '2021/05/10', text: 'I had a very difficult night\r\n\r\nMy lungs were really, really sick\r\n\r\nI waited for my parents to arrive in the morning\r\n\r\n I decided I was ready\r\n\r\nI went into cardiac arrest and I was resuscitated with CPR and epinetherin\r\n\r\nCPR broke some of my ribs\r\n\r\nI was kept alive by the ventilator until the following day\r\n\r\nMy parents knew I was not coming back\r\n\r\nThey made the brave decision to turn off my ventilator\r\n\r\nI took my last breath at 9:22am, peacefully, in the arms of my mommy and daddy, surrounded by my family\r\n\r\nI am now forever at peace', image: '' },
         { id: 'customa', day: true, date: '2021/05/18', text: 'Sterling was cremated, and some of her ashes were placed in the soil we used to plant a redbud tree.', image: '' },
         { id: 'customb', day: true, date: '2036/05/18', text: 'We watered her & we still got to watch her grow into something else equally as beautiful.', image: '' }

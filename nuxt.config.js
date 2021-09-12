@@ -55,7 +55,7 @@ export default {
 
   plausible: {
     trackLocalhost: true,
-    domain: `https://sterlingstrong.life`,
+    domain: `sterlingstrong.life`,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
