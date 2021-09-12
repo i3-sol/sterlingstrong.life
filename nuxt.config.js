@@ -53,6 +53,11 @@ export default {
     'vue-plausible',
   ],
 
+  plausible: {
+    trackLocalhost: true,
+    domain: `https://sterlingstrong.life`,
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
