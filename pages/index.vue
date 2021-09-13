@@ -190,7 +190,7 @@
         </h2>
 
         <ul class="mw-50">
-          <li class="position-relative" v-if="appeal === true">read my daddy's Medicaid <a href="https://kingsley.sh/posts/2021/sterlings-medicaid-hearing-response" class="stretched-link" target="_blank">Appeal Letter</a></li>
+          <li class="position-relative" v-if="appeal === true">read my daddy's Medicaid <a href="https://kingsley.sh/posts/2021/sterlings-medicaid-hearing-response" class="stretched-link" target="_blank">appeal</a> letter.</li>
           <li class="or">&mdash;&mdash; <span v-if="appeal === true">or</span> visit &mdash;&mdash;</li>
           <li class="position-relative" title="an incorporated 501(c)(3) non-profit pending IRS approval">
             my non-profit <br/><a href="https://sterlingstrong.foundation" class="stretched-link">Sterling Strong Foundation</a><br/><abbr>Inc.</abbr>
@@ -201,11 +201,6 @@
           <li class="position-relative">
             <span class="mt-7 d-block">
               My daddy and mommy <br/>are going to support, advocate,<br/>&amp; fight for children like me.
-            </span>
-          </li>
-          <li class="position-relative" v-if="appeal === true">
-            <span class="mt-7 d-block">
-              My daddy thinks <br/>no child should <strong class="font-weight-bold text-bigger d-block">unnecessarily</strong> suffer&hellip;
             </span>
           </li>
         </ul>
@@ -405,7 +400,7 @@ export default {
         { id: '50b.png', day: true, date: '2021/05/03', text: 'I deteriorated and needed to be intubated\r\n\r\nI had another catheterisation procedure to find out why I got sick\r\n\r\n...again...', image: '' },
         { id: '51a.png', day: true, date: '2021/05/06', text: 'Doctors tried to remove my breathing tube\r\n\r\nbut I wasn\'t strong enough without it', image: '' },
         { id: '51b.png', day: true, date: '2021/05/07', text: 'My lungs were very sick from the chlothorax and extra volume\r\n\r\nand I started extreme course of antibiotics', image: '' },
-        { id: '51c.png', day: true, date: '2021/05/10', text: 'I had a very difficult night\r\n\r\nMy lungs were really, really sick\r\n\r\nI waited for my parents to arrive in the morning\r\n\r\n I decided I was ready\r\n\r\nI went into cardiac arrest and I was resuscitated with CPR and epinetherin\r\n\r\nCPR broke some of my ribs\r\n\r\nI was kept alive by the ventilator until the following day\r\n\r\nMy parents knew I was not coming back\r\n\r\nThey made the brave decision to turn off my ventilator\r\n\r\nI took my last breath at 9:22am, peacefully, in the arms of my mommy and daddy, surrounded by my family\r\n\r\nI am now forever at peace', image: '' },
+        { id: '51c.png', day: true, date: '2021/05/10', text: 'I had a very hard night \r\n\r\n My lungs were really, really sick \r\n\r\n I waited for my parents to arrive in the morning \r\n\r\n I let them know I was ready \r\n\r\n I went into cardiac arrest and I was resuscitated with CPR and epinetherin \r\n\r\n CPR hurt some of my ribs \r\n\r\n I was kept alive by the ventilator for the night \r\n\r\n My parents made the brave decision to turn off my ventilator \r\n\r\n I took my last breath at 9:22am, peacefully, in the arms of my mommy and daddy, surrounded by my family\r\n\r\nI am now forever at peace', image: '' },
         { id: 'customa', day: true, date: '2021/05/18', text: 'Sterling was cremated, and some of her ashes were placed in the soil we used to plant a redbud tree.', image: '' },
         { id: 'customb', day: true, date: '2036/05/18', text: 'We watered her & we still got to watch her grow into something else equally as beautiful.', image: '' }
       ],
