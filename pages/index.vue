@@ -190,7 +190,7 @@
         </h2>
 
         <ul class="mw-50">
-          <li class="position-relative" v-if="appeal === true">read my daddy's Medicaid <a href="https://kingsley.sh/posts/2021/sterlings-medicaid-hearing-response" class="stretched-link" target="_blank">Appeal Letter</a></li>
+          <li class="position-relative" v-if="appeal === true">read my daddy's Medicaid <a href="https://kingsley.sh/posts/2021/sterlings-medicaid-hearing-response" class="stretched-link" target="_blank">appeal</a> letter.</li>
           <li class="or">&mdash;&mdash; <span v-if="appeal === true">or</span> visit &mdash;&mdash;</li>
           <li class="position-relative" title="an incorporated 501(c)(3) non-profit pending IRS approval">
             my non-profit <br/><a href="https://sterlingstrong.foundation" class="stretched-link">Sterling Strong Foundation</a><br/><abbr>Inc.</abbr>
@@ -201,11 +201,6 @@
           <li class="position-relative">
             <span class="mt-7 d-block">
               My daddy and mommy <br/>are going to support, advocate,<br/>&amp; fight for children like me.
-            </span>
-          </li>
-          <li class="position-relative" v-if="appeal === true">
-            <span class="mt-7 d-block">
-              My daddy thinks <br/>no child should <strong class="font-weight-bold text-bigger d-block">unnecessarily</strong> suffer&hellip;
             </span>
           </li>
         </ul>
