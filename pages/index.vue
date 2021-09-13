@@ -205,14 +205,7 @@
           </li>
           <li class="position-relative" v-if="appeal === true">
             <span class="mt-7 d-block">
-              <a href="https://en.wikipedia.org/wiki/Texas_Heartbeat_Act" target="_blank">Unlike these people.</a>
-            </span>
-          </li>
-          <li class="position-relative" v-if="appeal === true">
-            <span class="mt-7 d-block">
-              My daddy and mommy think <br/>no child should <strong class="font-weight-bold text-bigger d-block">unnecessarily</strong> suffer&hellip;
-              <br/><br/><br/><br/>
-              <span class="display-1 d-block mt-5">Do <em class="font-weight-bold">you?</em></span>
+              My daddy thinks <br/>no child should <strong class="font-weight-bold text-bigger d-block">unnecessarily</strong> suffer&hellip;
             </span>
           </li>
         </ul>
