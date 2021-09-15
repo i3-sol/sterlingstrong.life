@@ -252,7 +252,7 @@ html, body {
 #music {
     svg {
         height: 25px;
-        width: 100%;
+        width: 100px;
 
         @include media-breakpoint-up(md) {
             height: 75px;
