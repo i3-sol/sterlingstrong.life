@@ -198,7 +198,7 @@
               <img src="/i/sterling-strong-xl.png" class="mw-100 mx-auto" style="width:350px" alt="Sterling Strong Foundation, Inc.">
             </a>
           <li>
-          <li class="position-relative">
+          <li class="position-relative d-none">
             <span class="mt-7 d-block">
               My daddy and mommy <br/>are going to support, advocate,<br/>&amp; fight for children like me.
             </span>
