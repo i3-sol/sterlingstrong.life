@@ -145,7 +145,11 @@
       </div>
     </section>
 
-    <section class="min-vh-100 fullpage-section fullpage-section--bottom-fade  fullpage-section--bottom-fade py-10">
+    <section id="redbud" class="mb-10">
+      <img src="/i/eastern-redbud-tree-drawing.png" class="d-block mw-100 mx-auto" style="width:350px" alt="Redbud Tree - original shutterstock_1473268079, purchased 2022-07">
+    </section>
+
+    <section id="length" class="min-vh-100 fullpage-section fullpage-section--bottom-fade fullpage-section--bottom-fade py-10">
       <div class="container">
         <h2 class="display-4 body-text mb-10 text-center">
           over <strong class="font-weight-bold d-block"> 33 ft / 10 m</strong>of string &amp; beads
@@ -179,7 +183,7 @@
       </div>
     </section>
 
-    <div class="row justify-content-center align-self-center">
+    <div id="many-sterlings" class="row justify-content-center align-self-center">
       <section class="parallax min-vh-100 w-100 my-n5 py-5" data-type="background" data-speed="10" style="mask-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(215,131,127,1) 10%, rgba(215,131,127,1) 90%, rgba(255,255,255,0) 100%);">&nbsp;</section>
     </div>
 
@@ -200,7 +204,7 @@
           <li>
           <li class="position-relative">
             <span class="mt-7 d-block">
-              My daddy and mommy <br/>are going to support, advocate,<br/>&amp; fight for children like me.
+              support, advocate,<br/>&amp; fight for children like me.
             </span>
           </li>
         </ul>
@@ -394,15 +398,14 @@ export default {
         { id: '47a.png', day: false, date: '', text: '', image: '' },
         { id: '47b.png', day: false, date: '', text: '', image: '' },
         { id: '48a.png', day: false, date: '', text: '', image: '' },
-        { id: '48b.png', day: true, date: '2021/04/29', text: 'My mommy and daddy took me to a routine check-up\r\n\r\nDoctors told my parents my lungs were very cloudy\r\n\r\nI was having trouble breathing' , image: ''},
+        { id: '48b.png', day: true, date: '2021/04/29', text: 'My mommy and daddy took me to a routine check-up\r\n\r\nDoctors told my parents my lungs were very cloudy\r\n\r\nand I started to have trouble breathing' , image: ''},
         { id: '49a.png', day: false, date: '2021/04/29', text: 'I was admitted to the PCICU\r\n\r\n...again...\r\n\r\nMy 4th and final admission, this time because of my narrow veins, my lungs weren\'t able to drain my blood quick enough', image: '' },
         { id: '50a.png', day: true, date: '2021/05/01', text: 'I developed chlothorax\r\n\r\nI had a chest tube placed to drain the extra cyle/fluid around my lungs', image: '' },
         { id: '50b.png', day: true, date: '2021/05/03', text: 'I deteriorated and needed to be intubated\r\n\r\nI had another catheterisation procedure to find out why I got sick\r\n\r\n...again...', image: '' },
         { id: '51a.png', day: true, date: '2021/05/06', text: 'Doctors tried to remove my breathing tube\r\n\r\nbut I wasn\'t strong enough without it', image: '' },
-        { id: '51b.png', day: true, date: '2021/05/07', text: 'My lungs were very sick from the chlothorax and extra volume\r\n\r\nand I started extreme course of antibiotics', image: '' },
+        { id: '51b.png', day: true, date: '2021/05/07', text: 'My lungs were very sick from the chlothorax and extra volume\r\n\r\nand I started an extreme course of antibiotics', image: '' },
         { id: '51c.png', day: true, date: '2021/05/10', text: 'I had a very hard night \r\n\r\n My lungs were really, really sick \r\n\r\n I waited for my parents to arrive in the morning \r\n\r\n I let them know I was ready \r\n\r\n I went into cardiac arrest and I was resuscitated with CPR and epinetherin \r\n\r\n CPR hurt some of my ribs \r\n\r\n I was kept alive by the ventilator for the night \r\n\r\n My parents made the brave decision to turn off my ventilator \r\n\r\n I took my last breath at 9:22am, peacefully, in the arms of my mommy and daddy, surrounded by my family\r\n\r\nI am now forever at peace', image: '' },
-        { id: 'customa', day: true, date: '2021/05/18', text: 'Sterling was cremated, and some of her ashes were placed in the soil we used to plant a redbud tree.', image: '' },
-        { id: 'customb', day: true, date: '2036/05/18', text: 'We watered her & we still got to watch her grow into something else equally as beautiful.', image: '' }
+        { id: 'customa', day: true, date: '2021/05/18', text: 'Sterling was cremated, and some of her ashes were placed in the soil we used to plant an Eastern Redbud tree. We water her & we still get to watch her grow into something else equally as beautiful.', image: ' ' },
       ],
     };
   },
