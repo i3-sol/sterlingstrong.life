@@ -26,35 +26,35 @@ $spacers: (6: (1rem * 4.5), 7: (1rem * 6), 8: (1rem * 9), 9: (1rem * 10), 10: (1
 @import "node_modules/bootstrap/scss/bootstrap";
 
 @each $breakpoint in map-keys($grid-breakpoints) {
-  @include media-breakpoint-up($breakpoint) {
-    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-    @each $prop, $abbrev in (width: w, height: h) {
-      @each $size, $length in $sizes {
-        .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+        @each $prop, $abbrev in (width: w, height: h) {
+          @each $size, $length in $sizes {
+                .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
+            }
+        }
+        @each $size, $length in $spacers {
+            @if $size != 0 {
+                .m#{$infix}-n#{$size} { margin: -$length !important; }
+                .mt#{$infix}-n#{$size},
+                .my#{$infix}-n#{$size} {
+                    margin-top: -$length !important;
+                }
+                .mr#{$infix}-n#{$size},
+                .mx#{$infix}-n#{$size} {
+                    margin-right: -$length !important;
+                }
+                .mb#{$infix}-n#{$size},
+                .my#{$infix}-n#{$size} {
+                    margin-bottom: -$length !important;
+                }
+                .ml#{$infix}-n#{$size},
+                .mx#{$infix}-n#{$size} {
+                    margin-left: -$length !important;
+                }
+            }
+        }
     }
-}
-@each $size, $length in $spacers {
-  @if $size != 0 {
-    .m#{$infix}-n#{$size} { margin: -$length !important; }
-    .mt#{$infix}-n#{$size},
-    .my#{$infix}-n#{$size} {
-      margin-top: -$length !important;
-  }
-  .mr#{$infix}-n#{$size},
-  .mx#{$infix}-n#{$size} {
-      margin-right: -$length !important;
-  }
-  .mb#{$infix}-n#{$size},
-  .my#{$infix}-n#{$size} {
-      margin-bottom: -$length !important;
-  }
-  .ml#{$infix}-n#{$size},
-  .mx#{$infix}-n#{$size} {
-      margin-left: -$length !important;
-  }
-}
-}
-}
 }
 
 
@@ -88,6 +88,18 @@ html, body {
 .double-dash {
     letter-spacing: -3px;
     font-weight: 300;
+}
+.text-small {
+    font-size: 85% !important;
+}
+.text-small-x2 {
+    font-size: 75% !important;
+}
+.text-small-x3 {
+    font-size: 50% !important;
+}
+.text-small-x4 {
+    font-size: 25% !important;
 }
 
 .text-bigger {
@@ -630,13 +642,17 @@ html, body {
     }
 }
 
-
-
 .follow-my-journey {
     p {
         font-size: 1rem;
         @include media-breakpoint-up(sm) {
             font-size: 1.25rem;
         }
+    }
+}
+
+#many-sterlings {
+    .parallax {
+        mask-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(215,131,127,1) 10%, rgba(215,131,127,1) 90%, rgba(255,255,255,0) 100%)
     }
 }

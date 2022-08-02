@@ -1,6 +1,6 @@
 import getSiteMeta from './utilities/getSiteMeta'
 
-const meta = getSiteMeta();
+const meta = getSiteMeta()
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -19,7 +19,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
-      ...meta,
+      ...meta
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -50,12 +50,12 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    'vue-plausible',
+    'vue-plausible'
   ],
 
   plausible: {
     trackLocalhost: true,
-    domain: `sterlingstrong.life`,
+    domain: 'sterlingstrong.life'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

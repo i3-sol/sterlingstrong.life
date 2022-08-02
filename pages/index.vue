@@ -1,44 +1,53 @@
 <template>
   <div id="app" :class="{ 'css-mask-support': csssupport }">
-
     <section id="header" class="d-flex">
-      <a href="#" class="" id="music" @click.prevent="updateMusicStatus()"
+      <a
+        id="music"
+        href="#"
+        class=""
         :class="{ 'muted': music.stopped }"
+        @click.prevent="updateMusicStatus()"
       >
         <svg
           style=""
           class="d-inline-block"
-          xmlns="http://www.w3.org/2000/svg" version="1.0" width="500" height="500" viewBox="0 0 75 75"
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.0"
+          width="500"
+          height="500"
+          viewBox="0 0 75 75"
         >
           <path d="M39.389,13.769 L22.235,28.606 L6,28.606 L6,47.699 L21.989,47.699 L39.389,62.75 L39.389,13.769z" style="stroke:#111;stroke-width:5;stroke-linejoin:round;fill:#111;" class="speaker" />
           <path d="M48,27.6a19.5,19.5 0 0 1 0,21.4M55.1,20.5a30,30 0 0 1 0,35.6M61.6,14a38.8,38.8 0 0 1 0,48.6" style="fill:none;stroke:#111;stroke-width:5;stroke-linecap:round" class="sound-waves" />
         </svg>
       </a>
 
-      <a href="#" v-scroll-to="{ el: `#${name}`, container: '#app', duration: 1000, cancelable: true }" class="d-inline-block ml-1" id="scroll-up">
+      <a id="scroll-up" v-scroll-to="{ el: `#${name}`, container: '#app', duration: 1000, cancelable: true }" href="#" class="d-inline-block ml-1">
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
-            <g class="uparrow topped">
-                <path class="arrow" d="M1 4h10L6 9 1 4"/>
-            </g>
+          <g class="uparrow topped">
+            <path class="arrow" d="M1 4h10L6 9 1 4" />
+          </g>
         </svg>
       </a>
 
-      <a href="#" v-scroll-to="{ el: '#appeal', container: '#app', duration: 500000, cancelable: true }" class="d-inline-block ml-1" id="scroll-down">
+      <a id="scroll-down" v-scroll-to="{ el: '#appeal', container: '#app', duration: 500000, cancelable: true }" href="#" class="d-inline-block ml-1">
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
-            <g class="downarrow">
-                <path class="arrow" d="M1 4h10L6 9 1 4"/>
-            </g>
+          <g class="downarrow">
+            <path class="arrow" d="M1 4h10L6 9 1 4" />
+          </g>
         </svg>
       </a>
     </section>
 
-    <header class="min-vh-100 fullpage-section--top-fade" :id="name" :class="name">
+    <header :id="name" class="min-vh-100 fullpage-section--top-fade" :class="name">
       <div class="container-fluid text-center">
         <div class="row">
           <div class="col-lg-6 about">
-            <h2 :class="`${name}__name`">Sterling Nova Lynn Raspe</h2>
+            <h2 :class="`${name}__name`">
+              Sterling Nova Lynn Raspe
+            </h2>
             <h3 :class="`${name}__life-dates`">
-              8th September 2020<span class="divider"></span>11th May 2021
+              8th September 2020<span class="divider" />11th May 2021
               <small class="d-block days" style="letter-spacing: -0.5px;">
                 two hundred &amp; forty-five precious days
               </small>
@@ -47,11 +56,11 @@
           <div class="col-lg-6" :class="`${name}__obituary`">
             <div :class="`${name}__obituary__inner`">
               <div id="clouds">
-                <div class="cloud cloud--a"></div>
-                <div class="cloud cloud--b"></div>
-                <div class="cloud cloud--c"></div>
-                <div class="cloud cloud--d"></div>
-                <div class="cloud cloud--e"></div>
+                <div class="cloud cloud--a" />
+                <div class="cloud cloud--b" />
+                <div class="cloud cloud--c" />
+                <div class="cloud cloud--d" />
+                <div class="cloud cloud--e" />
               </div>
               <p>The word <strong>Sterling</strong> comes from the word <em>steorra</em>, meaning <strong>star</strong>. The word <em>nova</em> means <strong>new</strong>. A <em>nova</em> is when a star's gas builds up and triggers an explosion making it shine up to a <strong>million</strong> times <strong>brighter</strong> than normal.</p>
             </div>
@@ -67,47 +76,60 @@
     <div class="w-100 w-xl-50 mx-auto my-2 my-lg-10">
       <div class="row justify-content-center align-self-center">
         <div class="col-lg-6">
-          <section class="parallax parallax--masked min-vh-100 mx-5 mx-md-0 mt-5 mt-xl-10 mb-0" data-type="background" data-speed="10" ></section>
+          <section class="parallax parallax--masked min-vh-100 mx-5 mx-md-0 mt-5 mt-xl-10 mb-0" data-type="background" data-speed="10" />
         </div>
         <div class="col-lg-6">
-            <div class="d-flex h-100">
-              <div class="row justify-content-center align-self-center">
-                <div class="col-12 px-5 pl-xl-5 font-weight-light">
-                  <p class="lead">Sterling Raspe was an incredible little girl who was the epitome of strength.</p>
-                  <p class=""><strong class="font-weight-bold">Sterling</strong> lived for 245 days and spent 207 of those days in the Pediatric Cardiac Unit in Oak Lawn, IL, USA. She had 9 surgeries, including 4 major heart surgeries. She <strong class="font-weight-bold">was</strong> a very special little girl. Depending on who you ask, <strong class="font-weight-bold">anywhere</strong> between 700 million to two billion - or 1 of <strong class="font-weight-bold">between 4-11 people in the world</strong>.</p>
-                  <p>She was <em>very</em> special.</p>
-                  <p class="">She was diagnosed with:</p>
-                  <ul class="small font-weight-light">
-                    <li>a rare variant of hypoplastic left heart syndrome (HLHS)</li>
-                    <li>kabuki syndrome</li>
-                    <li>being severely immunocompromised (IgG deficient)</li>
-                    <li>isomerism/heterotaxy</li>
-                    <li>pulmonary stenosis</li>
-                    <li>severe/moderate hearing loss</li>
-                    <li>hypotonia</li>
-                    <li>multiple brain bleeds</li>
-                    <li>hip dysplasia</li>
-                    <li>hyperinsulinemia</li>
-                    <li>&hellip;and unfortunately, that's not a complete list</li>
-                  </ul>
-                </div>
+          <div class="d-flex h-100">
+            <div class="row justify-content-center align-self-center">
+              <div class="col-12 px-5 pl-xl-5 font-weight-light">
+                <p class="lead">
+                  Sterling Raspe was an incredible little girl who was the epitome of strength.
+                </p>
+                <p class="">
+                  <strong class="font-weight-bold">Sterling</strong> lived for 245 days and spent 207 of those days in the Pediatric Cardiac Unit in Oak Lawn, IL, USA. She had 9 surgeries, including 4 major heart surgeries. She <strong class="font-weight-bold">was</strong> a very special little girl. Depending on who you ask, <strong class="font-weight-bold">anywhere</strong> between 700 million to two billion - or 1 of <strong class="font-weight-bold">between 4-11 people in the world</strong>.
+                </p>
+                <p>She was <em>very</em> special.</p>
+                <p class="">
+                  She was diagnosed with:
+                </p>
+                <ul class="small font-weight-light">
+                  <li>a rare variant of hypoplastic left heart syndrome (HLHS)</li>
+                  <li>kabuki syndrome</li>
+                  <li>being severely immunocompromised (IgG deficient)</li>
+                  <li>isomerism/heterotaxy</li>
+                  <li>pulmonary stenosis</li>
+                  <li>severe/moderate hearing loss</li>
+                  <li>hypotonia</li>
+                  <li>multiple brain bleeds</li>
+                  <li>hip dysplasia</li>
+                  <li>hyperinsulinemia</li>
+                  <li>&hellip;and unfortunately, that's not a complete list</li>
+                </ul>
               </div>
             </div>
+          </div>
         </div>
         <div class="col-12 mt-5 mb-10 follow-my-journey">
-          <p class="text-center mt-10 mb-5 mb-md-7 "><span class="d-block  double-dash ">&mdash;&mdash;</span> Here is Sterling's journey, expressed through her <strong class="font-weight-bold">Beads of Courage</strong><span class="d-block double-dash">&mdash;&mdash;</span></p>
-          <p class="text-center mb-5 mb-md-7"><span class="d-block double-dash">&mdash;&mdash;</span> <strong class="font-weight-bold">One</strong> bead for <strong class="font-weight-bold">every</strong> scan, test, therapy, surgery, discharge, <em>etc.</em>&hellip; <span class="d-block double-dash">&mdash;&mdash;</span></p>
-          <p class="font-weight-bold text-center mb-10 "><span class="d-block double-dash">&mdash;&mdash;</span><span class="text-bigger-x3"> Sterling <span class="d-block d-lg-inline">received</span> <strong class="font-weight-bold brand-3 text-bigger-x5 align-middle p-2 d-block my-n4">{{ totals.beads }}</strong> <strong class="font-weight-bold">beads</strong></span> <span class="d-block double-dash">&mdash;&mdash;</span></p>
+          <p class="text-center mt-10 mb-5 mb-md-7 ">
+            <span class="d-block  double-dash ">&mdash;&mdash;</span> Here is Sterling's journey, expressed through her <strong class="font-weight-bold">Beads of Courage</strong><span class="d-block double-dash">&mdash;&mdash;</span>
+          </p>
+          <p class="text-center mb-5 mb-md-7">
+            <span class="d-block double-dash">&mdash;&mdash;</span> <strong class="font-weight-bold">One</strong> bead for <strong class="font-weight-bold">every</strong> scan, test, therapy, surgery, discharge, <em>etc.</em>&hellip; <span class="d-block double-dash">&mdash;&mdash;</span>
+          </p>
+          <p class="font-weight-bold text-center mb-10 ">
+            <span class="d-block double-dash">&mdash;&mdash;</span><span class="text-bigger-x3"> Sterling <span class="d-block d-lg-inline">received</span> <strong class="font-weight-bold brand-3 text-bigger-x5 align-middle p-2 d-block my-n4">{{ totals.beads }}</strong> <strong class="font-weight-bold">beads</strong></span> <span class="d-block double-dash">&mdash;&mdash;</span>
+          </p>
         </div>
       </div>
     </div>
 
-    <section class="min-vh-100 beads-of-courage" data-type="background" data-speed="10" >
+    <section class="min-vh-100 beads-of-courage" data-type="background" data-speed="10">
       <div class="container d-flex h-100">
         <div class="row justify-content-center align-self-center">
-
-          <blockquote class="blockquote" >
-            <p class="mb-0">Every time a bead is given, courage is honored, suffering is alleviated, resilience is strengthened, and the experience of <strong>human caring</strong> is affirmed. Every Beads of Courage Program integrates the use of beads, the earliest art form known to humans, as visible, tangible symbols of human experiences that <strong>need</strong> and <strong>deserve</strong> to be <strong>expressed</strong>.</p>
+          <blockquote class="blockquote">
+            <p class="mb-0">
+              Every time a bead is given, courage is honored, suffering is alleviated, resilience is strengthened, and the experience of <strong>human caring</strong> is affirmed. Every Beads of Courage Program integrates the use of beads, the earliest art form known to humans, as visible, tangible symbols of human experiences that <strong>need</strong> and <strong>deserve</strong> to be <strong>expressed</strong>.
+            </p>
             <footer class="blockquote-footer">
               <a href="https://beadsofcourage.org" target="_blank">https://beadsofcourage.org</a>
             </footer>
@@ -123,22 +145,26 @@
     </section>
 
     <section id="timeline" class="timeline container">
-      <div v-for="(b, n) in beads" :key="b.id" :id="`section--${b.id}`"
-        class="timeline__item" :class="`day--${daysSinceBirth(b.date)}`"
+      <div
+        v-for="(b, n) in beads"
+        :id="`section--${b.id}`"
+        :key="b.id"
+        class="timeline__item"
+        :class="`day--${daysSinceBirth(b.date)}`"
       >
-        <div class="timeline__image-holder" v-if="b.id.indexOf('.') > -1">
+        <div v-if="b.id.indexOf('.') > -1" class="timeline__image-holder">
           <img class="timeline__image" :src="`i/bead-sections/${b.id}`" :alt="`this is section ${b.id} of the beads`">
         </div>
-        <div class="timeline__description-wrapper" >
-          <div class="timeline__description" v-if="b.text || b.image">
-            <h3 class="timeline__title" v-if="b.day === true">
+        <div class="timeline__description-wrapper">
+          <div v-if="b.text || b.image" class="timeline__description">
+            <h3 v-if="b.day === true" class="timeline__title">
               {{ getDaySinceBirthText(b.date) }}
             </h3>
-            <h4 class="timeline__date text-muted" v-if="b.day === true">
+            <h4 v-if="b.day === true" class="timeline__date text-muted">
               {{ b.date }}
             </h4>
-            <div class="timeline__notes lead" v-if="b.text">
-              <p v-html="nl2br(b.text)"></p>
+            <div v-if="b.text" class="timeline__notes lead">
+              <p v-html="nl2br(b.text)" />
             </div>
           </div>
         </div>
@@ -160,15 +186,21 @@
             <thead class="thead-dark">
               <tr>
                 <th>Bead</th>
-                <th></th>
+                <th />
                 <th>Count</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="count in counts">
-                <td class="text-left">{{ count.text }}</td>
-                <td class="text-center"><small>{{ count.type }}</small></td>
-                <td class="text-center">{{ count.count.reduce((p, a) => p + a, 0) }}</td>
+                <td class="text-left">
+                  {{ count.text }}
+                </td>
+                <td class="text-center">
+                  <small>{{ count.type }}</small>
+                </td>
+                <td class="text-center">
+                  {{ count.count.reduce((p, a) => p + a, 0) }}
+                </td>
               </tr>
             </tbody>
             <tfoot class="">
@@ -184,38 +216,50 @@
     </section>
 
     <div id="many-sterlings" class="row justify-content-center align-self-center">
-      <section class="parallax min-vh-100 w-100 my-n5 py-5" data-type="background" data-speed="10" style="mask-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(215,131,127,1) 10%, rgba(215,131,127,1) 90%, rgba(255,255,255,0) 100%);">&nbsp;</section>
+      <section class="parallax min-vh-100 w-100 my-n5 py-5" data-type="background" data-speed="10">
+&nbsp;
+      </section>
     </div>
 
-    <section class="min-min-vh-100 fullpage-section appeal" id="appeal" >
+    <section id="appeal" class="min-min-vh-100 fullpage-section appeal">
       <div class="container mt-10" :class="{ 'mt-5': appeal === true }">
-        <h2 class="body-text font-weight-bold text-center" style="line-height: 1" v-if="appeal === true">
-          and even after I had <br/>gone through all of that, my various</br/>diagnosises and disabilities,<br/> as of today, <span class="d-block brand-7">{{ now }},</span> I still haven't qualified for<br/>Medicaid<br/><br/>Do you think I deserve to qualify?<br /><br/>My parents think I do.
+        <h2 v-if="appeal === true" class="body-text font-weight-bold text-center" style="line-height: 1">
+          and even after I had <br>gone through all of that, my various</br/>diagnosises and disabilities,<br> as of today, <span class="d-block brand-7">{{ now }},</span> I still haven't qualified for<br>Medicaid<br><br>Do you think I deserve to qualify?<br><br>My parents think I do.
         </h2>
 
         <ul class="mw-50">
-          <li class="position-relative" v-if="appeal === true">read my daddy's Medicaid <a href="https://kingsley.sh/posts/2021/sterlings-medicaid-hearing-response" class="stretched-link" target="_blank">appeal</a> letter.</li>
-          <li class="or">&mdash;&mdash; <span v-if="appeal === true">or</span> visit &mdash;&mdash;</li>
-          <li class="position-relative" title="an incorporated 501(c)(3) non-profit pending IRS approval">
-            my non-profit <br/><a href="https://sterlingstrong.foundation" class="stretched-link">Sterling Strong Foundation</a><br/><abbr>Inc.</abbr>
-            <a href="https://sterlingstrong.foundation" class="d-block mt-7" target="_blank">
-              <img src="/i/sterling-strong-xl.png" class="mw-100 mx-auto" style="width:350px" alt="Sterling Strong Foundation, Inc.">
+          <!--  -->
+          <li v-if="appeal === true" class="position-relative">
+            read my daddy's Medicaid <a href="https://kingsley.sh/posts/2021/sterlings-medicaid-hearing-response" class="stretched-link" target="_blank">appeal</a> letter.
+          </li>
+
+          <li class="position-relative">
+            support, advocate,<br>&amp; fight for children like me
+          </li>
+
+          <li class="or">
+            &mdash;&mdash;
+            <span v-if="appeal === true">or</span>
+            visit &mdash;&mdash;
+          </li>
+
+          <li class="position-relative" title="an incorporated 501(c)(3) non-profit">
+            <a href="https://sterlingstrong.foundation" class="d-block my-6" target="_blank">
+              <img src="/i/sterling-strong-xl.png" class="mw-100 mx-auto" style="width:300px" alt="Sterling Strong Foundation, Inc.">
             </a>
-          <li>
-          <li class="position-relative d-none">
-            <span class="mt-7 d-block">
-              support, advocate,<br/>&amp; fight for children like me.
-            </span>
+
+            <a href="https://sterlingstrong.foundation" class="stretched-link">Sterling Strong Foundation</a>, <abbr class="small">Inc.</abbr>
+
+            <span class="d-block text-small-x3">an incorporated 501(c)(3) non-profit organisation.</span>
           </li>
         </ul>
       </div>
     </section>
-
   </div>
 </template>
 
 <script>
-import $ from 'jquery';
+import $ from 'jquery'
 import moment from 'moment'
 
 export default {
@@ -228,44 +272,44 @@ export default {
       music: {
         stopped: false,
         playing: 0,
-        playlist: [],
+        playlist: []
       },
 
       dates: [],
 
       counts: [
-        { 'text': 'Admission or Transfer to Intensive Care Unit', 'type': 'Square Heart', count: [3, 1, 0] },
-        { 'text': 'Central Line | Midline | Pheresis Catherter Placement & Removal', 'type': 'Orange', count: [39, 105, 35] },
-        { 'text': 'Clinic Visit', 'type': 'Blue', count: [10, 0, 0], },
-        { 'text': 'Dialysis | TPN | NPO', 'type': 'Dark Green', count: [45, 111, 35], },
-        { 'text': 'Dressing Change & Skin Care', 'type': 'Gray', count: [10, 19, 9], },
-        { 'text': 'Echocardiogram', 'type': 'Glow in the Dark', count: [13, 17, 2], },
-        { 'text': 'Emergency | Unusual Occurrence | Seizure | Cardio Version | Emergency Transport', 'type': 'Magenta', count: [7, 14, 1], },
-        { 'text': 'Isolation Precautions | Fever | Neutropenia', 'type': 'Lime', count: [4, 0, 0], },
-        { 'text': 'IV Infusions', 'type': 'Purple', count: [51, 111, 35], },
-        { 'text': 'Learning New Medications | Parent Education', 'type': 'White', count: [0, 19, 11], },
-        { 'text': 'Nutrition & Diet Transitions', 'type': 'Beige', count: [13, 29, 12], },
-        { 'text': 'Overnight Stay in Hospital', 'type': 'Yellow', count: [60, 111, 35], },
-        { 'text': 'Pokes', 'type': 'Black', count: [63, 50, 23], },
-        { 'text': 'Procedures', 'type': 'Tortoise', count: [5, 5, 1], },
-        { 'text': 'Respiratory Support | Sedation | Anesthesia | Ventilator', 'type': 'Pink', count: [60, 111, 35], },
-        { 'text': 'Test | Scans', 'type': 'Light Green', count: [113, 143, 30], },
-        { 'text': 'Therapy', 'type': 'Rainbow', count: [16,69,10], },
-        { 'text': 'Transfusions | Blood Products | Pheresis', 'type': 'Red', count: [5, 39, 3], },
-        { 'text': 'Tube | Catheter | Pacer Wife Placement & Removal', 'type': 'Aqua', count: [38, 108, 39], },
-        { 'text': 'Act of Courage', 'type': 'Handmade Glass Selection', count: [8,18,4], },
-        { 'text': 'Cardiac Surgery', 'type': 'Silver Square Heart', count: [1,2,0], },
-        { 'text': 'ECMO', 'type': 'Small Round Fimo', count: [0,0,0], },
-        { 'text': 'General Surgery | Suture Removal | Staple Removal | Prolonged Chest Closure', 'type': 'Silver Star', count: [2,3,2], },
-        { 'text': 'Heart Transplant', 'type': 'Handmade Glass Heart', count: [0,0,0], },
-        { 'text': 'Independent Self or Parent Giving Instructions or Injections | Following Medicine Schedule', 'type': 'Ceramic Special Selection', count: [0,6,0], },
-        { 'text': 'Special Accomplishment | Recognition of Personal or Family Accomplishment', 'type': 'Ceramic Special Selection', count: [3,10,3], },
-        { 'text': 'Medication Challenges', 'type': 'Bumpy', count: [0,10,0], },
-        { 'text': 'Mobility Challenges', 'type': 'Bumpy', count: [0,26,0], },
-        { 'text': 'Pacemaker and/or Defibrillator Placement', 'type': 'Lightning Bolt', count: [0, 0, 0], },
-        { 'text': 'Parent or Caregiver "Firsts" with Newborn Infants', 'type': 'Small Glass Hearts', count: [0, 15, 0], },
-        { 'text': 'Transfer Units or Facilities | Long Distance Travel for Care | "Upstream Battles" ', 'type': 'Fish', count: [1, 2, 1], },
-        { 'text': 'Discharge from Hospital', 'type': 'Member\'s Choice', count: [2, 0, 1], },
+        { text: 'Admission or Transfer to Intensive Care Unit', type: 'Square Heart', count: [3, 1, 0] },
+        { text: 'Central Line | Midline | Pheresis Catherter Placement & Removal', type: 'Orange', count: [39, 105, 35] },
+        { text: 'Clinic Visit', type: 'Blue', count: [10, 0, 0] },
+        { text: 'Dialysis | TPN | NPO', type: 'Dark Green', count: [45, 111, 35] },
+        { text: 'Dressing Change & Skin Care', type: 'Gray', count: [10, 19, 9] },
+        { text: 'Echocardiogram', type: 'Glow in the Dark', count: [13, 17, 2] },
+        { text: 'Emergency | Unusual Occurrence | Seizure | Cardio Version | Emergency Transport', type: 'Magenta', count: [7, 14, 1] },
+        { text: 'Isolation Precautions | Fever | Neutropenia', type: 'Lime', count: [4, 0, 0] },
+        { text: 'IV Infusions', type: 'Purple', count: [51, 111, 35] },
+        { text: 'Learning New Medications | Parent Education', type: 'White', count: [0, 19, 11] },
+        { text: 'Nutrition & Diet Transitions', type: 'Beige', count: [13, 29, 12] },
+        { text: 'Overnight Stay in Hospital', type: 'Yellow', count: [60, 111, 35] },
+        { text: 'Pokes', type: 'Black', count: [63, 50, 23] },
+        { text: 'Procedures', type: 'Tortoise', count: [5, 5, 1] },
+        { text: 'Respiratory Support | Sedation | Anesthesia | Ventilator', type: 'Pink', count: [60, 111, 35] },
+        { text: 'Test | Scans', type: 'Light Green', count: [113, 143, 30] },
+        { text: 'Therapy', type: 'Rainbow', count: [16, 69, 10] },
+        { text: 'Transfusions | Blood Products | Pheresis', type: 'Red', count: [5, 39, 3] },
+        { text: 'Tube | Catheter | Pacer Wife Placement & Removal', type: 'Aqua', count: [38, 108, 39] },
+        { text: 'Act of Courage', type: 'Handmade Glass Selection', count: [8, 18, 4] },
+        { text: 'Cardiac Surgery', type: 'Silver Square Heart', count: [1, 2, 0] },
+        { text: 'ECMO', type: 'Small Round Fimo', count: [0, 0, 0] },
+        { text: 'General Surgery | Suture Removal | Staple Removal | Prolonged Chest Closure', type: 'Silver Star', count: [2, 3, 2] },
+        { text: 'Heart Transplant', type: 'Handmade Glass Heart', count: [0, 0, 0] },
+        { text: 'Independent Self or Parent Giving Instructions or Injections | Following Medicine Schedule', type: 'Ceramic Special Selection', count: [0, 6, 0] },
+        { text: 'Special Accomplishment | Recognition of Personal or Family Accomplishment', type: 'Ceramic Special Selection', count: [3, 10, 3] },
+        { text: 'Medication Challenges', type: 'Bumpy', count: [0, 10, 0] },
+        { text: 'Mobility Challenges', type: 'Bumpy', count: [0, 26, 0] },
+        { text: 'Pacemaker and/or Defibrillator Placement', type: 'Lightning Bolt', count: [0, 0, 0] },
+        { text: 'Parent or Caregiver "Firsts" with Newborn Infants', type: 'Small Glass Hearts', count: [0, 15, 0] },
+        { text: 'Transfer Units or Facilities | Long Distance Travel for Care | "Upstream Battles" ', type: 'Fish', count: [1, 2, 1] },
+        { text: 'Discharge from Hospital', type: 'Member\'s Choice', count: [2, 0, 1] }
       ],
 
       beads: [
@@ -394,131 +438,130 @@ export default {
         { id: '45b.png', day: true, date: '2021/04/10', text: 'I needed better access\r\n\r\nDoctors found out I had no more viable IV sites\r\n\r\nso they placed a central line in my neck\r\n\r\n I was not a happy', image: '' },
         { id: '45c.png', day: true, date: '2021/04/11', text: 'I had my diuretics held\r\n\r\n It made me really puffy\r\n\r\nI needed to pee off a lot of fluid', image: '' },
         { id: '45d.png', day: true, date: '2021/04/20', text: '... and I did!', image: '' },
-        { id: '46a.png', day: false, date: '2021/04/20', text:  'I got discharged again!', image: '' },
+        { id: '46a.png', day: false, date: '2021/04/20', text: 'I got discharged again!', image: '' },
         { id: '47a.png', day: false, date: '', text: '', image: '' },
         { id: '47b.png', day: false, date: '', text: '', image: '' },
         { id: '48a.png', day: false, date: '', text: '', image: '' },
-        { id: '48b.png', day: true, date: '2021/04/29', text: 'My mommy and daddy took me to a routine check-up\r\n\r\nDoctors told my parents my lungs were very cloudy\r\n\r\nand I started to have trouble breathing' , image: ''},
+        { id: '48b.png', day: true, date: '2021/04/29', text: 'My mommy and daddy took me to a routine check-up\r\n\r\nDoctors told my parents my lungs were very cloudy\r\n\r\nand I started to have trouble breathing', image: '' },
         { id: '49a.png', day: false, date: '2021/04/29', text: 'I was admitted to the PCICU\r\n\r\n...again...\r\n\r\nMy 4th and final admission, this time because of my narrow veins, my lungs weren\'t able to drain my blood quick enough', image: '' },
         { id: '50a.png', day: true, date: '2021/05/01', text: 'I developed chlothorax\r\n\r\nI had a chest tube placed to drain the extra cyle/fluid around my lungs', image: '' },
         { id: '50b.png', day: true, date: '2021/05/03', text: 'I deteriorated and needed to be intubated\r\n\r\nI had another catheterisation procedure to find out why I got sick\r\n\r\n...again...', image: '' },
         { id: '51a.png', day: true, date: '2021/05/06', text: 'Doctors tried to remove my breathing tube\r\n\r\nbut I wasn\'t strong enough without it', image: '' },
         { id: '51b.png', day: true, date: '2021/05/07', text: 'My lungs were very sick from the chlothorax and extra volume\r\n\r\nand I started an extreme course of antibiotics', image: '' },
         { id: '51c.png', day: true, date: '2021/05/10', text: 'I had a very hard night \r\n\r\n My lungs were really, really sick \r\n\r\n I waited for my parents to arrive in the morning \r\n\r\n I let them know I was ready \r\n\r\n I went into cardiac arrest and I was resuscitated with CPR and epinetherin \r\n\r\n CPR hurt some of my ribs \r\n\r\n I was kept alive by the ventilator for the night \r\n\r\n My parents made the brave decision to turn off my ventilator \r\n\r\n I took my last breath at 9:22am, peacefully, in the arms of my mommy and daddy, surrounded by my family\r\n\r\nI am now forever at peace', image: '' },
-        { id: 'customa', day: true, date: '2021/05/18', text: 'Sterling was cremated, and some of her ashes were placed in the soil we used to plant an Eastern Redbud tree. We water her & we still get to watch her grow into something else equally as beautiful.', image: ' ' },
-      ],
-    };
+        { id: 'customa', day: true, date: '2021/05/18', text: 'Sterling was cremated, and some of her ashes were placed in the soil we used to plant an Eastern Redbud tree. We water her & we still get to watch her grow into something else equally as beautiful.', image: ' ' }
+      ]
+    }
   },
-  mounted () {
-    this.updateMusicStatus();
-
-    this.$nextTick(() => {
-        this.setupParallax();
-    });
-
-    if (process.browser) {
-      const urlSearchParams = new URLSearchParams(window.location.search);
-      const { appeal } = Object.fromEntries(urlSearchParams.entries());
-
-      if (typeof appeal !== 'undefined') {
-        this.appeal = true;
+  computed: {
+    now () {
+      return moment().format('MMMM Do YYYY')
+    },
+    csssupport () {
+      if (process.browser) {
+        return {
+          cssmask: document.body.style['-webkit-mask-repeat'] !== undefined
+        }
+      }
+      return { cssmask: false }
+    },
+    totals () {
+      let beads = 0
+      for (let i = 0; i < this.counts.length; i++) {
+        beads += this.counts[i].count.reduce((p, a) => p + a, 0)
       }
 
-      this.music.stopped = true;
+      return { beads }
+    }
+  },
+  mounted () {
+    this.updateMusicStatus()
+
+    this.$nextTick(() => {
+      this.setupParallax()
+    })
+
+    if (process.browser) {
+      const urlSearchParams = new URLSearchParams(window.location.search)
+      const { appeal } = Object.fromEntries(urlSearchParams.entries())
+
+      if (typeof appeal !== 'undefined') {
+        this.appeal = true
+      }
+
+      this.music.stopped = true
       this.music.playlist = [
         new Audio('/a/pretty-pretty-blue-eyes.mp3'),
         new Audio('/a/speak-softly-sterling.mp3'),
         new Audio('/a/you-made-us-so-very-happy.mp3')
-      ];
-    }
-  },
-  computed: {
-    now() {
-      return moment().format('MMMM Do YYYY');
-    },
-    csssupport() {
-      if (process.browser) {
-        return {
-          'cssmask': document.body.style[ '-webkit-mask-repeat' ] !== undefined,
-        }
-      }
-      return { 'cssmask': false };
-    },
-    totals() {
-      let beads = 0;
-      for(let i = 0; i < this.counts.length; i++) {
-        beads += this.counts[i].count.reduce((p, a) => p + a, 0)
-      }
-
-      return { beads };
+      ]
     }
   },
   methods: {
-    updateMusicStatus() {
-      const self = this;
+    updateMusicStatus () {
+      const self = this
 
       try {
-        self.music.stopped = ! self.music.stopped;
+        self.music.stopped = !self.music.stopped
 
-        const audio = self.music.playlist[self.music.playing];
+        const audio = self.music.playlist[self.music.playing]
 
-        audio.onended = function() {
-          self.music.playing = ( self.music.playing === self.music.playlist.length -1 ? 0 : self.music.playing + 1);
-          const next = self.music.playlist[self.music.playing];
-          next.play();
-        };
-
-        if (self.music.stopped === true) {
-          audio.pause();
-          audio.currentTime = 0;
-          self.music.playing = ( self.music.playing === self.music.length ? 0 : self.music.playing + 1);
-          return;
+        audio.onended = function () {
+          self.music.playing = (self.music.playing === self.music.playlist.length - 1 ? 0 : self.music.playing + 1)
+          const next = self.music.playlist[self.music.playing]
+          next.play()
         }
 
-        audio.play();
+        if (self.music.stopped === true) {
+          audio.pause()
+          audio.currentTime = 0
+          self.music.playing = (self.music.playing === self.music.length ? 0 : self.music.playing + 1)
+          return
+        }
+
+        audio.play()
       } catch (error) {
-        self.music.stopped = ! self.music.stopped;
-        self.music.playing = 0;
+        self.music.stopped = !self.music.stopped
+        self.music.playing = 0
       }
     },
     nl2br (text) {
-      return text.replace(/\r\n/g, '<br/>');
+      return text.replace(/\r\n/g, '<br/>')
     },
 
     getDaySinceBirthText (date) {
-      return `Day ${this.daysSinceBirth(date)}`;
+      return `Day ${this.daysSinceBirth(date)}`
     },
 
     daysSinceBirth (to) {
-      const from = '2020-09-08';
+      const from = '2020-09-08'
 
       return Math.abs(
         moment(from, 'YYYY-MM-DD')
           .startOf('day')
           .diff(moment(to, 'YYYY-MM-DD').startOf('day'), 'days')
-      ) + 1 || 0;
+      ) + 1 || 0
     },
 
     setupParallax () {
       $(document).ready(() => {
-        var $window = $(window);
+        const $window = $(window)
 
-        $('#app').on('scroll', ((e) => {
-          $('.topped').removeClass('topped');
-        }));
+        $('#app').on('scroll', (e) => {
+          $('.topped').removeClass('topped')
+        })
 
         $('[data-type="background"]').each(() => {
-          var $bg = $(this);
+          const $bg = $(this)
 
           $(window).scroll(() => {
-
-            var yPos = -($window.scrollTop() / $bg.data('speed'));
-            var coords = '50% '+ yPos + 'px';
-            $bg.css({ backgroundPosition: coords });
-          });
-        });
-      });
-    },
+            const yPos = -($window.scrollTop() / $bg.data('speed'))
+            const coords = '50% ' + yPos + 'px'
+            $bg.css({ backgroundPosition: coords })
+          })
+        })
+      })
+    }
   }
 }
 </script>
